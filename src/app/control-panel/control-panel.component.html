@@ -1,0 +1,57 @@
+<section style="float: left;">
+  <h5>Control Pannel</h5>
+  <table>
+    <tr>
+      <td>Color</td>
+      <td><input type="text" name="color" id="color" [(ngModel)]="myColor"></td>
+    </tr>
+    <tr>
+      <td>text size</td>
+      <td><input type="text" name="taille" id="taille" [(ngModel)]="textSize"></td>
+    </tr>
+    <tr>
+      <td>title Style</td>
+      <td><select [(ngModel)]="selectedStyle">
+          <option value="italic">Italic</option>
+          <option value="normal">Normal</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td>Theme</td>
+      <td><select [(ngModel)]="selectedTheme" (change)="changeTheme(selectedTheme)">
+          <option value="dark">Dark</option>
+          <option value="white">White</option>
+          <option value="pink">Pink</option>
+        </select>
+        {{selectedTheme}}
+      </td>
+    </tr>
+    <tr>
+      <td>Url Avatar</td>
+      <td><input type="text" name="url" id="url" [(ngModel)]="imgUrl"></td>
+    </tr>
+
+
+  </table>
+
+</section>
+<section style="float: right; width: 50%;" [ngClass]="{ dark: darkTh, pink: pinkTh, white:whiteTh}">
+
+  <h5 [ngStyle]="{'font-style':selectedStyle}">Titre du Resultat</h5>
+  <div [ngStyle]="{'font-size':textSize +'px', 'color':myColor}">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi temporibus veniam laudantium repellat magnam,
+      repellendus sint ducimus ab deserunt voluptatum quas nulla natus ex, quod debitis tempora magni voluptate
+      assumenda?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi temporibus veniam laudantium repellat magnam,
+      repellendus sint ducimus ab deserunt voluptatum quas nulla natus ex, quod debitis tempora magni voluptate
+      assumenda?</p>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi temporibus veniam laudantium repellat magnam,
+      repellendus sint ducimus ab deserunt voluptatum quas nulla natus ex, quod debitis tempora magni voluptate
+      assumenda?</p>
+  </div>
+  <img [src]="imgUrl" alt="Image on chargee">
+
+
+
+
+</section>
